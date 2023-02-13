@@ -7,14 +7,14 @@ function Forecast({title, items, units}) {
         <p className='text-white font-bold uppercase'> {title} Forecast </p>
         <hr className='my-1'/>
 
-        <div className='flex flex-row  text-white font-light justify-between items-center'> {/*Hourly Forecasts*/}
+        <div className='flex flex-row  text-white font-light justify-between items-center gap-4 mx-auto'> {/*Hourly Forecasts*/}
             
             {items.map((item)=>{
                 return(
                             <div key={item.title} className='flex font-medium  flex-col items-center justify-center'>
                                 <p>{item.title}</p>
-                                <img src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`} alt="" className='w-16' style={{filter: "drop-shadow(5px 5px 5px #666666)"}}/>
-                                <p className='font-bold text-lg text-white'>{Math.round(item.temp)}{`°${units==='metric'?'C':'F'}`}</p>
+                                <img src={`http://openweathermap.org/img/wn/${item.icon}@2x.png`} alt="" className='w-26' style={{filter: "drop-shadow(5px 5px 5px #666666)"}}/>
+                                <p className='font-bold text-md text-white'>{Math.round(item.temp)}{`°${units==='metric'?'C':'F'}`}</p>
                             </div>)
              })}
             

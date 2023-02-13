@@ -32,13 +32,13 @@ function App() {
         if (!weather)   return "from-cyan-700 to-blue-700";
         const threshold = (units==='metric')?20:60;
         if(weather.temp <= threshold && weather.temp>threshold*0.6)    return "from-cyan-700 to-blue-700";
-        else if(weather.temp <= threshold*0.6)  return "from-cyan-300 to-blue-300";
-        else if(weather.temp > threshold && weather.temp<=threshold*1.5  )       return "from-orange-300 to-yellow-300"
+        else if(weather.temp <= threshold*0.6)  return "from-cyan-400 to-blue-400";
+        else if(weather.temp > threshold && weather.temp<=threshold*1.5  )       return "from-orange-400 to-yellow-400"
         else    return "from-yellow-700 to-orange-700"
   }
 
   return (
-    <div className ={`mx-auto max-w-screen-md py-2 px-32 bg-gradient-to-br ${formatBackground()} h-fit shadow-xl shadow-gray-400 `}>
+    <div className ={`mx-auto max-w-screen-md py-2 px-10 bg-gradient-to-br ${formatBackground()} h-fit shadow-xl shadow-gray-400 `}>
       <TopButtons setQuery={setQuery}/>
       <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
 
